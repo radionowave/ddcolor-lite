@@ -110,4 +110,12 @@ outputs = [
     gr.outputs.Image(type="pil", label="Colorized Image")
 ]
 
-gr.Interface(fn=generate, inputs=inputs, outputs=outputs, title="Image Colorization").launch(share=True)
+with gr.Blocks() as demo:
+    with gr.Row():
+        with gr.Column():
+            image = gr.Image(type="filepath", label="Upload Image")
+            button = gr.Button("Colorize")
+        output_image = gr.Image(label="Colorized Image")
+    button.click(fn=generate, inputs=[image], outputs=[output_image])
+
+demo.launch(share=True)
