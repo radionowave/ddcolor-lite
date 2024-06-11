@@ -3,7 +3,9 @@ torchvision>=0.8.0
 numpy>=1.19.2
 opencv-python
 tqdm>=4.50.0
-gradio==0.1.0
+gradio
 requests>=2.25.0
 basicsr>=1.4.2
 timm>=0.6.7
+beautifulsoup4
+Pillow
